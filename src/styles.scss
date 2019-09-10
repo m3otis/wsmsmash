@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+body {
+    font-family: 'VT323', monospace;
+    color: #dfe4ea;
+    background-color: #2f3542;
+}
+
+.mat-form-field-label {
+    color: white !important;
+}
