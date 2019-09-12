@@ -29,8 +29,81 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.playersList = this.mapToPlayers();
+    this.replacePlacementWithIcon();
+    this.replaceCharacterWithIcon();
     this.dataSource = new MatTableDataSource(this.playersList);
-    console.log(this.playersList);
+  }
+
+  replaceCharacterWithIcon() {
+    this.playersList.forEach(p => {
+      let characters = p.characters.split(',');
+      characters = characters.map(x => {
+        return x.trim();
+      });
+
+      const charactersWithImage = characters.map(c => {
+        if (c === 'Ken') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/ken.png">';
+        } else if (c === 'Chrom') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/chrom.png">';
+        } else if (c === 'Bowser') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/bowser.png">';
+        } else if (c === 'Ganondorf') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/ganondorf.png">';
+        } else if (c === 'Capt. Falcon') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/captain_falcon.png">';
+        } else if (c === 'Link') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/link.png">';
+        } else if (c === 'Roy') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/roy.png">';
+        } else {
+          return c;
+        }
+      });
+
+      console.log(charactersWithImage);
+
+      p.characters = charactersWithImage.join(' ');
+      // const placementsWithEmojiArray: string[] = placements.map(x => {
+      //   if (x === '[**1st**]') {
+      //     return '🥇';
+      //   } else if (x === '[*2nd*]') {
+      //     return '🥈';
+      //   } else if (x === '[3rd]') {
+      //     return '🥉';
+      //   } else {
+      //     return '';
+      //   }
+      // });
+
+      // const placementsWithEmojiString: string = placementsWithEmojiArray.join('');
+      // console.log(placementsWithEmojiString);
+
+      // p.notablePlacements = placementsWithEmojiString;
+    });
+  }
+
+  replacePlacementWithIcon() {
+    this.playersList.forEach(p => {
+      const placements = p.notablePlacements.split(' ');
+
+      const placementsWithEmojiArray: string[] = placements.map(x => {
+        if (x === '[**1st**]') {
+          return '🥇';
+        } else if (x === '[*2nd*]') {
+          return '🥈';
+        } else if (x === '[3rd]') {
+          return '🥉';
+        } else {
+          return '';
+        }
+      });
+
+      const placementsWithEmojiString: string = placementsWithEmojiArray.join(
+        ''
+      );
+      p.notablePlacements = placementsWithEmojiString;
+    });
   }
 
   mapToPlayers() {

@@ -1,80 +1,113 @@
-<mat-form-field style="color: white !important;">
+<table class="table table-striped table-dark playerstable">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Characters</th>
+      <th scope="col">Wins</th>
+      <th scope="col">Losses</th>
+      <th scope="col">Total Games</th>
+      <th scope="col">Placement Points</th>
+      <th scope="col">Score</th>
+      <th scope="col">Win Percent</th>
+      <th scope="col">Total Score</th>
+      <th scope="col">Notable Placements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of playersList; let i = index">
+      <td>{{p.position}}</td>
+      <td>{{p.name}}</td>
+      <td class="img" [innerHtml]="p.characters"></td>
+      <td>{{p.wins}}</td>
+      <td>{{p.losses}}</td>
+      <td>{{p.totalgames}}</td>
+      <td>{{p.placementPoints}}</td>
+      <td>{{p.score}}</td>
+      <td>{{p.winPercent}}</td>
+      <td>{{p.totalScore}}</td>
+      <td class="medal">{{p.notablePlacements}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <mat-form-field style="color: white !important;">
   <input
     matInput
     (keyup)="applyFilter($event.target.value)"
     placeholder="Filter"
   />
-</mat-form-field>
+</mat-form-field> -->
 
-<table class="playerstable" mat-table [dataSource]="dataSource">
+<!-- <table class="playerstable" mat-table [dataSource]="dataSource"> -->
   <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
-  <ng-container matColumnDef="position">
+  <!-- <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef>Position</th>
     <td mat-cell *matCellDef="let element">{{ element.position }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Position Column -->
-  <ng-container matColumnDef="name">
+  <!-- <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Name Column -->
-  <ng-container matColumnDef="characters">
+  <!-- <ng-container matColumnDef="characters">
     <th mat-header-cell *matHeaderCellDef>Characters</th>
     <td mat-cell *matCellDef="let element">{{ element.characters }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Weight Column -->
-  <ng-container matColumnDef="wins">
+  <!-- <ng-container matColumnDef="wins">
     <th mat-header-cell *matHeaderCellDef>Wins</th>
     <td mat-cell *matCellDef="let element">{{ element.wins }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="losses">
+  <!-- <ng-container matColumnDef="losses">
     <th mat-header-cell *matHeaderCellDef>Losses</th>
     <td mat-cell *matCellDef="let element">{{ element.losses }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="totalgames">
+  <!-- <ng-container matColumnDef="totalgames">
     <th mat-header-cell *matHeaderCellDef>Totalgames</th>
     <td mat-cell *matCellDef="let element">{{ element.totalgames }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="placementPoints">
+  <!-- <ng-container matColumnDef="placementPoints">
     <th mat-header-cell *matHeaderCellDef>Placement Points</th>
     <td mat-cell *matCellDef="let element">{{ element.placementPoints }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="score">
+  <!-- <ng-container matColumnDef="score">
     <th mat-header-cell *matHeaderCellDef>Score</th>
     <td mat-cell *matCellDef="let element">{{ element.score }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="winPercent">
+  <!-- <ng-container matColumnDef="winPercent">
     <th mat-header-cell *matHeaderCellDef>Win Percent</th>
     <td mat-cell *matCellDef="let element">{{ element.winPercent }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="totalScore">
+  <!-- <ng-container matColumnDef="totalScore">
     <th mat-header-cell *matHeaderCellDef>Placement Points</th>
     <td mat-cell *matCellDef="let element">{{ element.totalScore }}</td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="notablePlacements">
+  <!-- <ng-container matColumnDef="notablePlacements">
     <th mat-header-cell *matHeaderCellDef>Notable Placements</th>
     <td mat-cell *matCellDef="let element">{{ element.notablePlacements }}</td>
-  </ng-container>
-
+  </ng-container> -->
+<!-- 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+</table> -->

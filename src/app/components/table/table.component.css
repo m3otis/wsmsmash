@@ -3,3 +3,12 @@
   min-width: 75vw;
   max-width: auto;
 }
+
+.medal {
+  font-size: 200%;
+  white-space: nowrap;
+}
+
+.img {
+  white-space: nowrap;
+}
