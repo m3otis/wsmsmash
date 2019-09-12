@@ -56,6 +56,14 @@ export class TableComponent implements OnInit {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/link.png">';
         } else if (c === 'Roy') {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/roy.png">';
+        } else if (c === 'Wii Fit Trainer') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/wii_fit_trainer.png">';
+        } else if (c === 'Mr. Game and Watch') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/mr_game_and_watch.png">';
+        } else if (c === 'Joker') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/joker.png">';
+        } else if (c === 'King K. Rool') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/king_k_rool.png">';
         } else {
           return c;
         }
