@@ -12,3 +12,31 @@
 .img {
   white-space: nowrap;
 }
+
+.numberone {
+  font-size: 150%;
+  color: black;
+  background-image: -webkit-linear-gradient(#FFF65C 45%, #9A8000 75%);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.09),
+    -1px -1px 0 rgba(247, 246, 245, 0.67);
+}
+
+.numbertwo {
+  font-size: 150%;
+  color: black;
+  background-image: -webkit-linear-gradient(rgb(238, 237, 228) 45%, rgb(99, 97, 89) 75%);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.09),
+    -1px -1px 0 rgba(247, 246, 245, 0.67);
+}
+
+.numberthree {
+  font-size: 150%;
+  color: black;
+  background-image: -webkit-linear-gradient(rgb(255, 152, 92) 45%, rgb(154, 49, 0) 75%);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.09),
+    -1px -1px 0 rgba(247, 246, 245, 0.67);
+}
+
+.valign {
+  vertical-align: middle;
+}

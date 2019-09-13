@@ -1,4 +1,27 @@
 .content {
-    display: grid;
-    justify-items: center;
+  display: grid;
+  justify-items: center;
+}
+
+.video {
+  width: 600px;
+  height: 337.5px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.fe-pulse {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }

@@ -1,7 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>{{ title }}!</h1>
-  <img alt="#1 Champions Logo" src="../assets/chrom.png" />
+  <div (click)=videoPlay()>
+    <img class="fe-pulse" height="100px" alt="#1 Champions Logo" src="../assets/SmashBall.svg" />
+  </div>
+
+  <div>
+    <video #video class="video" poster="../assets/SmashBall.svg">
+      <source src="../assets/pakkie.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <br /><br />
 </div>
 
 <div class="content">

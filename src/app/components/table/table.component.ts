@@ -64,30 +64,44 @@ export class TableComponent implements OnInit {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/joker.png">';
         } else if (c === 'King K. Rool') {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/king_k_rool.png">';
+        } else if (c === 'Sonic') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/sonic.png">';
+        } else if (c === 'Zelda') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/zelda.png">';
+        } else if (c === 'Samus') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/samus.png">';
+        } else if (c === 'Falco') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/falco.png">';
+        } else if (c === 'Little Mac') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/little_mac.png">';
+        } else if (c === 'Palutena') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/palutena.png">';
+        } else if (c === 'Incineroar') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/gaogaen.png">';
+        } else if (c === 'Marth') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/marth.png">';
+        } else if (c === 'Lucina') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/lucina.png">';
+        } else if (c === 'Lucas') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/lucas.png">';
+        } else if (c === 'Villager') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/villager.png">';
+        } else if (c === 'Robin') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/robin.png">';
+        } else if (c === 'Ridley') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/ridley.png">';
+        } else if (c === 'King Dedede') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/king_dedede.png">';
+        } else if (c === 'R.O.B.') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/rob.png">';
+        } else if (c === 'Kirby') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/kirby.png">';
         } else {
           return c;
         }
       });
 
-      console.log(charactersWithImage);
-
       p.characters = charactersWithImage.join(' ');
-      // const placementsWithEmojiArray: string[] = placements.map(x => {
-      //   if (x === '[**1st**]') {
-      //     return '🥇';
-      //   } else if (x === '[*2nd*]') {
-      //     return '🥈';
-      //   } else if (x === '[3rd]') {
-      //     return '🥉';
-      //   } else {
-      //     return '';
-      //   }
-      // });
-
-      // const placementsWithEmojiString: string = placementsWithEmojiArray.join('');
-      // console.log(placementsWithEmojiString);
-
-      // p.notablePlacements = placementsWithEmojiString;
     });
   }
 

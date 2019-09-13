@@ -15,18 +15,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of playersList; let i = index">
-      <td>{{p.position}}</td>
-      <td>{{p.name}}</td>
-      <td class="img" [innerHtml]="p.characters"></td>
-      <td>{{p.wins}}</td>
-      <td>{{p.losses}}</td>
-      <td>{{p.totalgames}}</td>
-      <td>{{p.placementPoints}}</td>
-      <td>{{p.score}}</td>
-      <td>{{p.winPercent}}</td>
-      <td>{{p.totalScore}}</td>
-      <td class="medal">{{p.notablePlacements}}</td>
+    <tr [ngClass]="{'numberone': p.position === 1, 'numbertwo': p.position === 2, 'numberthree': p.position === 3}" *ngFor="let p of playersList; let i = index">
+      <td class="valign">{{p.position}}</td>
+      <td class="valign">{{p.name}}</td>
+      <td class="img valign" [innerHtml]="p.characters"></td>
+      <td class="valign">{{p.wins}}</td>
+      <td class="valign">{{p.losses}}</td>
+      <td class="valign">{{p.totalgames}}</td>
+      <td class="valign">{{p.placementPoints}}</td>
+      <td class="valign">{{p.score}}</td>
+      <td class="valign">{{p.winPercent}}</td>
+      <td class="valign">{{p.totalScore}}</td>
+      <td class="medal valign">{{p.notablePlacements}}</td>
     </tr>
   </tbody>
 </table>
