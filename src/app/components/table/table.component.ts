@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import players from '../../../assets/sept2019.json';
+import players from '../../../assets/nov2019-2.json';
 import { Player } from 'src/app/models/player.js';
 import { MatTableDataSource } from '@angular/material/table';
+import { DataService } from 'src/app/services/data.service.js';
 
 @Component({
   selector: 'app-table',
@@ -9,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  a = '';
   playersList: Array<Player>;
   dataSource: MatTableDataSource<Player>;
   displayedColumns: string[] = [
@@ -25,13 +27,72 @@ export class TableComponent implements OnInit {
     'notablePlacements'
   ];
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.playersList = this.mapToPlayers();
-    this.replacePlacementWithIcon();
-    this.replaceCharacterWithIcon();
-    this.dataSource = new MatTableDataSource(this.playersList);
+    // try {
+    //   this.playersList = this.dataService.mapToPlayers(new Array<Player>());
+    //   this.replacePlacementWithIcon();
+    //   this.replaceCharacterWithIcon();
+    //   this.dataSource = new MatTableDataSource(this.playersList);
+    // } catch (e) {
+      // console.log(e + ' something went wrong during the get request');
+      this.playersList = this.mapToPlayers();
+      this.replacePlacementWithIcon();
+      this.replaceCharacterWithIcon();
+      this.dataSource = new MatTableDataSource(this.playersList);
+    //}
+  }
+
+  replacePlacementWithIcon() {
+    this.playersList.forEach(p => {
+      const placements = p.notablePlacements.split(' ');
+
+      const placementsWithEmojiArray: string[] = placements.map(x => {
+        if (x === '[**1st**]') {
+          return '🥇';
+        } else if (x === '[*2nd*]') {
+          return '🥈';
+        } else if (x === '[3rd]') {
+          return '🥉';
+        } else {
+          return '';
+        }
+      });
+
+      const placementsWithEmojiString: string = placementsWithEmojiArray.join(
+        ''
+      );
+      p.notablePlacements = placementsWithEmojiString;
+    });
+  }
+
+  mapToPlayers() {
+    const playerObjects: Array<Player> = new Array<Player>();
+
+    players.forEach(p => {
+      const currentPlayer: Player = {
+        position: playerObjects.length + 1,
+        name: p.Name,
+        characters: p.Characters,
+        wins: p.Wins,
+        losses: p.Losses,
+        totalgames: p.TotalGames,
+        placementPoints: p.Placement_Points,
+        score: p.Score,
+        winPercent: p.WinPercent,
+        totalScore: p.Total_Score,
+        notablePlacements: p.Notable_placements
+      };
+
+      playerObjects.push(currentPlayer);
+    });
+
+    return playerObjects;
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   replaceCharacterWithIcon() {
@@ -96,6 +157,18 @@ export class TableComponent implements OnInit {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/rob.png">';
         } else if (c === 'Kirby') {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/kirby.png">';
+        } else if (c === 'Luigi') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/luigi.png">';
+        } else if (c === 'Snake') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/snake.png">';
+        } else if (c === 'Pokemon Trainer') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/pokemon_trainer.png">';
+        } else if (c === 'Cloud') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/cloud.png">';
+        } else if (c === 'Captain Falcon') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/captain_falcon.png">';
+        } else if (c === 'Mewtwo') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/mewtwo.png">';
         } else {
           return c;
         }
@@ -103,56 +176,5 @@ export class TableComponent implements OnInit {
 
       p.characters = charactersWithImage.join(' ');
     });
-  }
-
-  replacePlacementWithIcon() {
-    this.playersList.forEach(p => {
-      const placements = p.notablePlacements.split(' ');
-
-      const placementsWithEmojiArray: string[] = placements.map(x => {
-        if (x === '[**1st**]') {
-          return '🥇';
-        } else if (x === '[*2nd*]') {
-          return '🥈';
-        } else if (x === '[3rd]') {
-          return '🥉';
-        } else {
-          return '';
-        }
-      });
-
-      const placementsWithEmojiString: string = placementsWithEmojiArray.join(
-        ''
-      );
-      p.notablePlacements = placementsWithEmojiString;
-    });
-  }
-
-  mapToPlayers() {
-    const playerObjects: Array<Player> = new Array<Player>();
-
-    players.forEach(p => {
-      const currentPlayer: Player = {
-        position: playerObjects.length + 1,
-        name: p.Name,
-        characters: p.Characters,
-        wins: p.Wins,
-        losses: p.Losses,
-        totalgames: p.TotalGames,
-        placementPoints: p.Placement_Points,
-        score: p.Score,
-        winPercent: p.WinPercent,
-        totalScore: p.Total_Score,
-        notablePlacements: p.Notable_placements
-      };
-
-      playerObjects.push(currentPlayer);
-    });
-
-    return playerObjects;
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

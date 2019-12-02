@@ -8,7 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { MatSortModule } from '@angular/material/sort';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatToolbar, MatToolbarModule, MatButtonModule} from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -16,13 +18,16 @@ import {MatInputModule} from '@angular/material';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatTableModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

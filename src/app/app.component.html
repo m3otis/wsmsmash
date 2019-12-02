@@ -1,8 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar>
+  <div class="logo"></div>
+  <span class="toolbar">WSM</span>
+  <button mat-button>Ranking</button>
+  <button mat-button>Player Cards</button>
+</mat-toolbar>
+
 <div style="text-align:center">
   <h1>{{ title }}!</h1>
-  <div (click)=videoPlay()>
-    <img class="fe-pulse" height="100px" alt="#1 Champions Logo" src="../assets/SmashBall.svg" />
+  <div (click)="videoPlay()">
+    <img
+      class="fe-pulse"
+      height="100px"
+      alt="#1 Champions Logo"
+      src="../assets/SmashBall.svg"
+    />
   </div>
 
   <div>
