@@ -1,15 +1,13 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-@import url('https://fonts.googleapis.com/css?family=VT323|Share+Tech+Mono&display=swap');
-
 body {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Source Code Pro', monospace;
   color: #dfe4ea;
   background-color: #2f3542;
 }
 
 h1 {
-  font-family: 'VT323', monospace;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .mat-form-field-label {
@@ -18,10 +16,10 @@ h1 {
 
 .mat-button-wrapper {
   color: #2f3542;
-  font-family: 'Share Tech Mono', monospace !important;
+  font-family: 'Source Code Pro', monospace !important;
   font-weight: bolder;
 }
 
 .toolbar {
-  font-family: 'Share Tech Mono', monospace !important;
+  font-family: 'Source Code Pro', monospace !important;
 }

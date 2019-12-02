@@ -169,6 +169,12 @@ export class TableComponent implements OnInit {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/captain_falcon.png">';
         } else if (c === 'Mewtwo') {
           return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/mewtwo.png">';
+        } else if (c === 'Inkling') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/inkling.png">';
+        } else if (c === 'Banjo-Kazooie') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/banjo_and_kazooie.png">';
+        } else if (c === 'Ness') {
+          return '<img height="50px" src="https://www.smashbros.com/assets_v2/img/fighter/pict/ness.png">';
         } else {
           return c;
         }

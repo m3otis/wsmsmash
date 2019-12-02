@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { MatSortModule } from '@angular/material/sort';
-import {MatInputModule, MatToolbar, MatToolbarModule, MatButtonModule} from '@angular/material';
+import {MatInputModule, MatToolbar, MatToolbarModule, MatButtonModule, MatSnackBarModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
 
@@ -25,7 +25,8 @@ import { DataService } from './services/data.service';
     MatSortModule,
     MatInputModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

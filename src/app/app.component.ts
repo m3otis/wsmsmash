@@ -8,6 +8,7 @@ import {
   Renderer2
 } from '@angular/core';
 import { element } from 'protractor';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
 
   title = 'WSM SMASH RANKING';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private snackBar: MatSnackBar, private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {}
 
@@ -45,5 +46,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
       this.video.nativeElement.pause();
       this.renderer.setStyle(this.vid, 'height', '0px');
     }
+  }
+
+  alert() {
+    this.snackBar.open('🌝 Sorry: Not yet implemented!');
   }
 }
